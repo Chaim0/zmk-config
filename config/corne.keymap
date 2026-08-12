@@ -65,8 +65,8 @@
         base {
                 bindings = <
                     //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-                    //│  none    │  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  '       │  none    │
-                    &none       &kp Q       &kp W       &kp F       &kp P       &kp B         &kp J       &kp L       &kp U       &kp Y       &kp '       &none
+                    //│  none    │  Q       │  W       │  F       │     P    │     B    │   │     J    │     L    │  U       │  Y       │  '       │  none    │
+                        &none     &kp Q       &kp W      &kp F      &kp P      &kp B          &kp J      &kp L       &kp U       &kp Y       &kp SQT     &none
                     //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
                     //│  none    │  LSHFT A │  LALT R  │  LCTRL S │  LGUI T  │  G       │   │  M       │  RGUI N  │  RCTRL E │  RALT I  │  RSHFT O │  -       │
                     &none       &hml LSHFT A &hml LALT R &hml LCTRL S &hml LGUI T &kp G         &kp M       &hmr RGUI N &hmr RCTRL E &hmr RALT I &hmr RSHFT O &kp -
