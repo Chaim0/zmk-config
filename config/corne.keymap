@@ -75,16 +75,16 @@
                 bindings = <
                     //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
                     //│  none    │  Q       │  W       │  F       │  P       │  B       │   │  J       │  L       │  U       │  Y       │  '       │  none    │
-                    &none       &kp Q       &kp W       &kp F       &kp P       &kp B         &kp J       &kp L       &kp U       &kp Y       &kp '       &none
+                    &none       &kp Q       &kp W       &kp F       &kp P       &kp B         &kp J       &kp L       &kp U       &kp Y  &kp SQT       &none
                     //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
                     //│  none    │  LSHFT A │  LALT R  │  LCTRL S │  LGUI T  │  G       │   │  M       │  RGUI N  │  RCTRL E │  RALT I  │  RSHFT O │  -       │
-                    &none       &hml LSHFT A &hml LALT R &hml LCTRL S &hml LGUI T &kp G         &kp M       &hmr RGUI N &hmr RCTRL E &hmr RALT I &hmr RSHFT O &kp -
+                    &none       &hml LSHFT A &hml LALT R &hml LCTRL S &hml LGUI T &kp G         &kp M       &hmr RGUI N &hmr RCTRL E &hmr RALT I &hmr RSHFT O &kp MINUS 
                     //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
                     //│  none    │  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │   , ;    │  DOT     │  FSLH    │  none    │
                     &none       &kp Z       &kp X       &kp C       &kp D       &kp V         &kp K       &kp H &mod_morph_morph &kp DOT &kp FSLH    &none
                     //╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯
                     //                                 ╭──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────╮
-                    //                                 │  ESC     │  LOWER TAB│  ENTER   │   │  SPACE   │  RAISE   │  RALT BSPC│
+                    //                                 │  ESC     │ LOWER TAB│  ENTER   │   │  SPACE   │  RAISE   │ RALT BSPC│
                                                      &kp ESC     &lower_tap_hold LOWER TAB &kp ENTER     &kp SPACE   &mo RAISE   &altgr_tap_hold RALT BSPC
                     //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                 >;
