@@ -129,7 +129,7 @@
                 >;
             };
 
-        alternate {
+        adjust {
                 bindings = <
                     //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
                     //│  trans   │   trans  │  All A   │  trans   │  trans   │  trans   │   │  BT_SEL 0│  BT_SEL 3│  trans   │  trans   │  trans   │  OUT_USB │
