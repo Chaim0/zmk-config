@@ -10,6 +10,7 @@
 #define LOWER 1
 #define RAISE 2
 #define ADJUST 3
+#define ALLA 4
 
 / {
     behaviors {
@@ -78,7 +79,7 @@
                     &none       &kp Q       &kp W       &kp F       &kp P       &kp B         &kp J       &kp L       &kp U       &kp Y  &kp SQT       &none
                     //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
                     //│  none    │  LSHFT A │  LALT R  │  LCTRL S │  LGUI T  │  G       │   │  M       │  RGUI N  │  RCTRL E │  RALT I  │  RSHFT O │  -       │
-                    &none       &hml LSHFT A &hml LALT R &hml LCTRL S &hml LGUI T &kp G         &kp M       &hmr RGUI N &hmr RCTRL E &hmr RALT I &hmr RSHFT O &kp MINUS 
+                    &none       &hml LSHFT A &hml LALT R &hml LCTRL S &hml LGUI T &kp G         &kp M       &hmr RGUI N &hmr RCTRL E &hmr RALT I &hmr RSHFT O &kp MINUS
                     //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
                     //│  none    │  Z       │  X       │  C       │  D       │  V       │   │  K       │  H       │   , ;    │  DOT     │  FSLH    │  none    │
                     &none       &kp Z       &kp X       &kp C       &kp D       &kp V         &kp K       &kp H &mod_morph_morph &kp DOT &kp FSLH    &none
@@ -131,18 +132,37 @@
         alternate {
                 bindings = <
                     //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
-                    //│  trans   │  trans   │  trans   │  trans   │  trans   │  trans   │   │  BT_SEL 0│  BT_SEL 3│  trans   │  trans   │  trans   │  OUT_USB │
-                    &trans      &trans      &trans      &trans      &trans      &trans        &bt BT_SEL 0 &bt BT_SEL 3 &trans      &trans      &trans      &out OUT_USB
+                    //│  trans   │   trans  │  All A   │  trans   │  trans   │  trans   │   │  BT_SEL 0│  BT_SEL 3│  trans   │  trans   │  trans   │  OUT_USB │
+                        &trans      &trans &tog ALLA     &trans      &trans     &trans     &bt BT_SEL 0 &bt BT_SEL 3 &trans    &trans     &trans &out OUT_USB
                     //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
                     //│  trans   │  trans   │  trans   │  RGB_BRI │  RGB_HUI │  RGB_EFF │   │  BT_SEL 1│  BT_SEL 4│  trans   │  trans   │  trans   │  OUT_BLE │
-                    &trans      &trans      &trans      &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_EFF   &bt BT_SEL 1 &bt BT_SEL 4 &trans      &trans      &trans      &out OUT_BLE
+                     &trans &trans &trans &rgb_ug RGB_BRI &rgb_ug RGB_HUI &rgb_ug RGB_EFF  &bt BT_SEL 1 &bt BT_SEL 4 &trans    &trans     &trans &out OUT_BLE
                     //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
-                    //│  trans   │  trans   │  trans   │  RGB_BRD │  RGB_HUD │  RGB_TOG │   │  BT_SEL 2│  trans   │  trans   │  trans   │  trans   │  BT_CLR  │
-                    &trans      &trans      &trans      &rgb_ug RGB_BRD &rgb_ug RGB_HUD &rgb_ug RGB_TOG   &bt BT_SEL 2 &trans      &trans      &trans      &trans      &bt BT_CLR
+                    //│  trans   │  trans   │  trans   │  RGB_BRD │  RGB_HUD │  RGB_TOG │   │  BT_SEL 2│  trans   │  trans   │  BT CLR  │  trans   │  BT_CLR  │
+                     &trans &trans &trans &rgb_ug RGB_BRD &rgb_ug RGB_HUD &rgb_ug RGB_TOG  &bt BT_SEL 2  &trans     &trans     &bt BT_CLR &trans  &bt BT_CLR
                     //╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯
                     //                                 ╭──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────╮
                     //                                 │  trans   │  trans   │  trans   │   │  trans   │  trans   │  trans   │
                                                      &trans      &trans      &trans        &trans      &trans      &trans
+                    //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+                >;
+            };
+
+        alla {
+                bindings = <
+                    //╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────┬──────────╮
+                    //│  A       │  A       │  A       │  A       │  A       │  A       │   │  A       │  A       │  A       │  A       │  A       │  A       │
+                    &kp A       &kp A       &kp A       &kp A       &kp A       &kp A         &kp A       &kp A       &kp A       &kp A       &kp A       &kp A
+                    //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+                    //│  A       │  A       │  A       │  A       │  A       │  A       │   │  A       │  A       │  A       │  A       │  A       │  A       │
+                    &kp A       &kp A       &kp A       &kp A       &kp A       &kp A         &kp A       &kp A       &kp A       &kp A       &kp A       &kp A
+                    //├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┼──────────┤
+                    //│  A       │  A       │  A       │  A       │  A       │  A       │   │  A       │  A       │  A       │  A       │  A       │  A       │
+                    &kp A       &kp A       &kp A       &kp A       &kp A       &kp A         &kp A       &kp A       &kp A       &kp A       &kp A       &kp A
+                    //╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────┴──────────┴──────────┴──────────╯
+                    //                                 ╭──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────╮
+                    //                                 │  A       │  LOWER   │  A       │   │  A       │  RAISE   │  A       │
+                                                     &kp A       &mo LOWER   &kp A         &kp A       &mo RAISE   &kp A
                     //                                 ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
                 >;
             };
